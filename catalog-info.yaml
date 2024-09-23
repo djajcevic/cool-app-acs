@@ -1,0 +1,18 @@
+#$schema: https://json.schemastore.org/catalog-info.json
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: cool-app
+  annotations:
+    github.com/project-slug: djajcevic/cool-app-acs
+    backstage.io/environment: dev
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/name=cool-app-bff'
+  tags:
+    - java
+spec:
+  type: service
+  lifecycle: development
+  owner: demo-team
+  system: demo
+  dependsOn:
+    - component:default/cool-app-acr
